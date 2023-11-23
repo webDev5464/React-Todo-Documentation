@@ -1,0 +1,16 @@
+{
+  "name": "My-Todo",
+  "short_name": "My-Todo",
+  "description": "A description of your React app",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/public/todo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
