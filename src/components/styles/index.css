@@ -1,0 +1,41 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.dark {
+  --black: black;
+  --white: white;
+  --mainBg: #303442;
+  --aside: #1f1f1f;
+}
+
+.light {
+  --black: white;
+  --white: black;
+  --mainBg: #afbff3;
+  --aside: #dadada;
+}
+
+.aside {
+  @apply bg-[--aside] text-[--white] w-48 h-screen relative mdTablet:absolute shadow-xl shadow-[--aside]
+}
+
+.refAndTheme {
+  @apply absolute bottom-0 w-full flex justify-around tablet:items-center lg:py-3
+}
+
+.aside-Disable {
+  @apply tablet:w-14 duration-100
+}
+
+.aside-Enable {
+  @apply tablet:w-48 duration-300
+}
+
+.active {
+  @apply text-skyBlue
+}
+
+input, textarea {
+  @apply bg-[--aside] text-[--white] rounded-lg p-1 focus:text-[--black] focus:bg-[--white] focus:outline-none focus:shadow-inputShadow border-2 border-[--white]
+}
