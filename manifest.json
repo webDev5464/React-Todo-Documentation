@@ -2,11 +2,7 @@
   "name": "My-Todo",
   "short_name": "My-Todo",
   "description": "Create this todo side in react using tailwindCss",
-  "start_url": "/",
-  "display_override": [
-    "window-control-overlay",
-    "minimal-ui"
-  ],
+  "start_url": "/",  
   "display": "standalone",
   "background_color": "#303442",
   "theme_color": "#303442",
