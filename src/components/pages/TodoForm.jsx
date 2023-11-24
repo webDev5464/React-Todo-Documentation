@@ -61,6 +61,6 @@ export default function TodoForm() {
           <input type="submit" value="Add Todo" className="cursor-pointer bg-skyBlue text-[--black] font-bold active:scale-95" onClick={addTodoBtn} />
         </div>
       </form>
-    </section >
+    </section>
   )
 }
