@@ -16,10 +16,10 @@ export default function TodoForm() {
   } = useContext(GlobalContext)
 
   return (
-    <section className="w-fit m-auto mt-10 lMobile:mt-0">
-      <h2 className="text-center mb-4 text-2xl font-bold">Create Your Todo</h2>
+    <section className="w-fit m-auto mt-10 lMobile:mt-0 border-2 bg-[--aside] rounded-lg">
+      <h2 className="text-center mb-4 text-2xl font-bold bg-[--white] text-[--black] py-2">Create Todo</h2>
+      <form className="lg:w-[800px] laptopSm:w-[600px] smTablet:w-[400px] lMobile:w-[350px] mMobile:w-[300px] py-1 px-4 tablet:w-fit smTablet:py-3 small:shadow-[0_2px_20px_0_var(--aside)]" onSubmit={submittedForm}>
 
-      <form className="lg:w-[800px] laptopSm:w-[600px] smTablet:w-[400px] lMobile:w-[350px] mMobile:w-[300px] border-2 py-1 px-4 tablet:w-fit rounded-lg bg-[--aside] smTablet:py-3 shadow-[0_2px_20px_0_var(--aside)]" onSubmit={submittedForm}>
         <div className="tablet:w-full flex justify-between my-2 smTablet:flex-col smTablet:w-fit smTablet:m-auto smTablet:mb-3">
           <div className="smTablet:mb-2">
             <label htmlFor="todoHeading" className="text-2xl">Heading :</label>

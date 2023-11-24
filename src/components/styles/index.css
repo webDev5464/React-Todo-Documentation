@@ -17,7 +17,7 @@
 }
 
 .aside {
-  @apply bg-[--aside] text-[--white] lg:w-48 w-fit h-screen relative mdTablet:absolute flex flex-col items-center shadow-[0_0_12px_1px_var(--aside)]
+  @apply bg-[--aside] text-[--white] lg:w-48 w-fit h-screen relative mdTablet:absolute flex flex-col items-center small:shadow-[0_0_12px_1px_var(--aside)]
 }
 
 .refAndTheme {

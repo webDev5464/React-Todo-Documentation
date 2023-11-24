@@ -10,6 +10,7 @@ export default {
     },
     screens: {
       "lg": "1000px",
+      "small": "600px",
       laptopSm: {
         "max": "1100px"
       },
