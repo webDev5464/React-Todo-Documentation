@@ -16,10 +16,10 @@ export default function TodoForm() {
   } = useContext(GlobalContext)
 
   return (
-    <section className="w-fit m-auto mt-10">
+    <section className="w-fit m-auto mt-10 lMobile:mt-0">
       <h2 className="text-center mb-4 text-2xl font-bold">Create Your Todo</h2>
 
-      <form className="lg:w-[800px] laptopSm:w-[600px] smTablet:w-[400px] border-2 py-1 px-4 tablet:w-fit rounded-lg bg-[--aside] smTablet:py-3" onSubmit={submittedForm}>
+      <form className="lg:w-[800px] laptopSm:w-[600px] smTablet:w-[400px] lMobile:w-[350px] mMobile:w-[300px] border-2 py-1 px-4 tablet:w-fit rounded-lg bg-[--aside] smTablet:py-3" onSubmit={submittedForm}>
         <div className="tablet:w-full flex justify-between my-2 smTablet:flex-col smTablet:w-fit smTablet:m-auto smTablet:mb-3">
           <div className="smTablet:mb-2">
             <label htmlFor="todoHeading" className="text-2xl">Heading :</label>
@@ -53,7 +53,7 @@ export default function TodoForm() {
             <label htmlFor="description" className="text-2xl mr-3">Description :</label>
           </div>
           <div>
-            <textarea name="descriptor" rows="3" className="w-[400px] smTablet:w-[300px]" placeholder="Write Here..." value={inputDescription} onChange={(e) => setInputDescription(e.target.value)} />
+            <textarea name="descriptor" className="w-[400px] smTablet:w-[300px] mMobile:w-[250px] mMobile:h-[130px]" placeholder="Write Here..." value={inputDescription} onChange={(e) => setInputDescription(e.target.value)} />
           </div>
         </div>
 

@@ -15,15 +15,15 @@ export default function Aside() {
   return (
     <section className={aside ? `aside aside-Disable ${theme}` : `aside aside-Enable ${theme}`}>
       {/* hamburger Button */}
-      <section className="lg:hidden text-4xl mx-2 flex items-center py-3">
-        <button onClick={showAside}>
+      <section className="lg:hidden text-4xl lMobile:text-2xl mx-2 flex items-center py-3 h-14">
+        <button onClick={showAside} className={aside ? '' : 'absolute left-0 px-3'}>
           {aside ? <GiHamburgerMenu /> : <MdCancel />}
         </button>
       </section>
       {/* Icon & webHeading */}
-      <section className={`flex items-center justify-center bg-[--mainBg] text-[--white] ${theme}`}>
+      <section className={`flex w-full items-center justify-center bg-[--mainBg] text-[--white] ${theme}`}>
         <div className="m-2">
-          <img src={TodoIcon} alt="TodoIcon" className="w-10" />
+          <img src={TodoIcon} alt="TodoIcon" className="w-10 lMobile:w-7" />
         </div>
         <div className={aside ? "tablet:hidden" : "block"}>
           <h2 className={`text-lg mx-6 font-bold`}>My-Todo</h2>
@@ -35,7 +35,7 @@ export default function Aside() {
           <NavLink to={'/'}>
             {aside
               ?
-              <div className="lg:text-xl text-3xl flex items-center">
+              <div className="lg:text-xl text-3xl lMobile:text-2xl flex items-center">
                 <div className="mx-2"><FaPencilAlt /></div>
                 <div className="tablet:hidden">Create Todo</div>
               </div>
@@ -51,7 +51,7 @@ export default function Aside() {
           <NavLink to={'TodoList'}>
             {aside
               ?
-              <div className="lg:text-xl text-3xl flex items-center">
+              <div className="lg:text-xl text-3xl lMobile:text-2xl flex items-center">
                 <div className="mx-2"><LuListTodo /></div>
                 <div className="tablet:hidden">Todo List</div>
               </div>
@@ -66,11 +66,11 @@ export default function Aside() {
       </section>
       {/* Ref & Theme */}
       <section className={aside ? "refAndTheme tablet:flex-col" : "refAndTheme flex-row"}>
-        <div onClick={toggleTheme} className="text-3xl cursor-pointer tablet:py-3">
+        <div onClick={toggleTheme} className="text-3xl lMobile:text-2xl cursor-pointer tablet:py-3">
           {theme === "dark" ? <FaSun /> : <FaMoon />}
         </div>
         <div className="tablet:py-3">
-          <Link to={"https://github.com/webDev5464"} target="_blank" className="text-3xl"><FaGithub /></Link>
+          <Link to={"https://github.com/webDev5464"} target="_blank" className="text-3xl lMobile:text-2xl"><FaGithub /></Link>
         </div>
       </section>
     </section>

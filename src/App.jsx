@@ -14,7 +14,7 @@ export default function App() {
           <Aside />
         </div>
 
-        <main className={`p-5 bg-[--mainBg] text-[--white] w-full mdTablet:h-screen mdTablet:pl-20 ${theme}`}>
+        <main className={`p-5 bg-[--mainBg] text-[--white] w-full mdTablet:h-screen mdTablet:pl-20 lMobile:pl-16 ${theme}`}>
           <Routes>
             <Route path="/" element={<TodoForm />} />
             <Route path="TodoList" element={<TodoList />} />

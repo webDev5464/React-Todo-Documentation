@@ -17,15 +17,15 @@
 }
 
 .aside {
-  @apply bg-[--aside] text-[--white] w-48 h-screen relative mdTablet:absolute shadow-xl shadow-[--aside]
+  @apply bg-[--aside] text-[--white] lg:w-48 w-fit h-screen relative mdTablet:absolute flex flex-col items-center
 }
 
 .refAndTheme {
-  @apply absolute bottom-0 w-full flex justify-around tablet:items-center lg:py-3
+  @apply absolute bottom-0 w-full flex justify-around tablet:items-center lg:py-3 lMobile:bottom-3
 }
 
 .aside-Disable {
-  @apply tablet:w-14 duration-100
+  @apply tablet:w-fit duration-100
 }
 
 .aside-Enable {

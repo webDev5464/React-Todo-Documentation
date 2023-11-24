@@ -21,6 +21,12 @@ export default {
       },
       smTablet: {
         "max": "750px"
+      },
+      lMobile: {
+        "max": "550px"
+      },
+      mMobile: {
+        "max": "440px"
       }
     },
     extend: {
