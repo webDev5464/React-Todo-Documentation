@@ -11,7 +11,7 @@ import { GlobalContext } from "./ContextProvider"
 import { Link, NavLink } from "react-router-dom"
 
 export default function Aside() {
-  const { aside, showAside, theme, toggleTheme } = useContext(GlobalContext)
+  const { aside, showAside, theme, toggleTheme, todoData } = useContext(GlobalContext)
   return (
     <section className={aside ? `aside aside-Disable ${theme}` : `aside aside-Enable ${theme}`}>
       {/* hamburger Button */}
@@ -47,18 +47,24 @@ export default function Aside() {
             }
           </NavLink>
         </div>
-        <div className="flex items-center justify-center py-3">
+        <div className="relative flex items-center justify-center py-3">
           <NavLink to={'TodoList'}>
             {aside
               ?
               <div className="lg:text-xl text-3xl lMobile:text-2xl flex items-center">
-                <div className="mx-2"><LuListTodo /></div>
+                <div className="absolute right-1 top-0 text-[--aside] lg:text-xl text-sm font-bold bg-[--red] w-4 h-4 rounded-full flex justify-center items-center">
+                  <div>{todoData.length}</div>
+                </div>
+                <div className="mx-2 z-10"><LuListTodo /></div>
                 <div className="tablet:hidden">Todo List</div>
               </div>
               :
               <div className="flex items-center justify-between w-full">
+                <div className="absolute right-0 top-1 text-[--aside] text-sm font-bold bg-[--red] w-4 h-4 rounded-full flex justify-center items-center">
+                  <div>{todoData.length}</div>
+                </div>
                 <div className="text-2xl px-2"><LuListTodo /></div>
-                <div className="text-center w-full">Todo List</div>
+                <div className="text-center w-full z-10">Todo List</div>
               </div>
             }
           </NavLink>
@@ -70,7 +76,7 @@ export default function Aside() {
           {theme === "dark" ? <FaSun /> : <FaMoon />}
         </div>
         <div className="tablet:py-3">
-          <Link to={"https://github.com/webDev5464"} target="_blank" className="text-3xl lMobile:text-2xl"><FaGithub /></Link>
+          <Link to={"https://github.com/webDev5464/React-Todo-Documentation.git"} target="_blank" className="text-3xl lMobile:text-2xl"><FaGithub /></Link>
         </div>
       </section>
     </section>

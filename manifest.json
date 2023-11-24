@@ -1,11 +1,6 @@
 {
   "name": "My-Todo",
   "short_name": "My-Todo",
-  "description": "Create this todo side in react using tailwindCss",
-  "start_url": "https://react-todo-doc.netlify.app",
-  "display": "standalone",
-  "background_color": "#303442",
-  "theme_color": "#303442",
   "icons": [
     {
       "src": "/todo.png",
@@ -17,5 +12,10 @@
       "sizes": "192x192",
       "type": "image/png"
     }
-  ]
+  ],
+  "description": "Create this todo side in react using tailwindCss",
+  "start_url": "https://react-todo-doc.netlify.app",
+  "display": "standalone",
+  "background_color": "#303442",
+  "theme_color": "#303442"
 }

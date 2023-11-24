@@ -2,6 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+:root {
+  --red: tomato;
+  --gray: #6b7280;
+}
+
 .dark {
   --black: black;
   --white: white;

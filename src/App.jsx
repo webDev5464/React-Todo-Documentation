@@ -10,11 +10,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <section className="flex select-none">
-        <div>
+        <div className="fixed z-10">
           <Aside />
         </div>
 
-        <main className={`p-5 bg-[--mainBg] text-[--white] w-full mdTablet:h-screen mdTablet:pl-20 lMobile:pl-16 ${theme}`}>
+        <main className={`h-screen overflow-auto p-5 pl-[210px] tablet:pl-[80px] bg-[--mainBg] text-[--white] w-full mdTablet:pl-20 lMobile:pl-16 ${theme}`}>
           <Routes>
             <Route path="/" element={<TodoForm />} />
             <Route path="TodoList" element={<TodoList />} />

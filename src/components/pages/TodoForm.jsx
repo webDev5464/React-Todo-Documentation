@@ -17,7 +17,7 @@ export default function TodoForm() {
 
   return (
     <section className="w-fit m-auto mt-10 lMobile:mt-0 border-2 bg-[--aside] rounded-lg">
-      <h2 className="text-center mb-4 text-2xl font-bold bg-[--white] text-[--black] py-2">Create Todo</h2>
+      <h2 className="text-center mb-4 text-2xl font-bold bg-[--white] text-[--black] py-2 rounded-tr-md rounded-tl-md">Create Todo</h2>
       <form className="lg:w-[800px] laptopSm:w-[600px] smTablet:w-[400px] lMobile:w-[350px] mMobile:w-[300px] py-1 px-4 tablet:w-fit smTablet:py-3 small:shadow-[0_2px_20px_0_var(--aside)]" onSubmit={submittedForm}>
 
         <div className="tablet:w-full flex justify-between my-2 smTablet:flex-col smTablet:w-fit smTablet:m-auto smTablet:mb-3">
@@ -25,7 +25,7 @@ export default function TodoForm() {
             <label htmlFor="todoHeading" className="text-2xl">Heading :</label>
           </div>
           <div>
-            <input type="text" className="mx-2" placeholder="Write Here..." value={inputHeading} onChange={(e) => setInputHeading(e.target.value)} />
+            <input type="text" className="mx-2" placeholder="Write Here..." required value={inputHeading} onChange={(e) => setInputHeading(e.target.value)} />
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function TodoForm() {
             <label htmlFor="description" className="text-2xl mr-3">Description :</label>
           </div>
           <div>
-            <textarea name="descriptor" className="w-[400px] smTablet:w-[300px] mMobile:w-[250px] mMobile:h-[130px]" placeholder="Write Here..." value={inputDescription} onChange={(e) => setInputDescription(e.target.value)} />
+            <textarea name="descriptor" className="w-[400px] smTablet:w-[300px] mMobile:w-[250px] mMobile:h-[130px]" placeholder="Write Here..." required value={inputDescription} onChange={(e) => setInputDescription(e.target.value)} />
           </div>
         </div>
 
