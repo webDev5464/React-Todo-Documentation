@@ -45,6 +45,9 @@ export default function ContextProvider({ children }) {
   const [inputTime, setInputTime] = useState("")
   const [inputDate, setInputDate] = useState("")
   const [inputDescription, setInputDescription] = useState("")
+  //! popup message
+  const [activeTodo, setActiveTodo] = useState(false)
+  const [popupMsg, setPopupMsg] = useState("")
 
   //! Add data in array
   const [todoData, setTodoData] = useState([])
@@ -69,6 +72,11 @@ export default function ContextProvider({ children }) {
 
       //? update state
       setTodoData(updatedTodoData)
+
+      //? popup message
+      setPopupMsg("New todo added")
+      setActiveTodo(true)
+      setTimeout(() => { setActiveTodo(false), setPopupMsg("") }, 1500)
     }
 
     setInputHeading("")
@@ -82,27 +90,29 @@ export default function ContextProvider({ children }) {
     const updatedTodo = todoData.filter(todo => todo.id !== todoId)
     localStorage.setItem("storedData", JSON.stringify(updatedTodo))
     setTodoData(updatedTodo)
+
+    //? popup message
+    setPopupMsg("Remove todo")
+    setActiveTodo(true)
+    setTimeout(() => { setActiveTodo(false), setPopupMsg("") }, 1000)
   }
 
   return (
     <GlobalContext.Provider value={{
-      aside,
-      setAside,
+      aside, setAside,
+      inputHeading, setInputHeading,
+      inputTime, setInputTime,
+      inputDate, setInputDate,
+      inputDescription, setInputDescription,
+      popupMsg, setPopupMsg,
+      activeTodo,
+      addTodoBtn,
+      todoData,
+      removeTodo,
       showAside,
       theme,
       toggleTheme,
       submittedForm,
-      inputHeading,
-      setInputHeading,
-      inputTime,
-      setInputTime,
-      inputDate,
-      setInputDate,
-      inputDescription,
-      setInputDescription,
-      addTodoBtn,
-      todoData,
-      removeTodo
     }}>
       {children}
     </GlobalContext.Provider>

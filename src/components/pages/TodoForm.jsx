@@ -25,7 +25,7 @@ export default function TodoForm() {
             <label htmlFor="todoHeading" className="text-2xl">Heading :</label>
           </div>
           <div>
-            <input type="text" className="mx-2" placeholder="Write Here..." required value={inputHeading} onChange={(e) => setInputHeading(e.target.value)} />
+            <input type="text" className="mx-2" placeholder="Write Here..." value={inputHeading} onChange={(e) => setInputHeading(e.target.value)} />
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function TodoForm() {
             <label htmlFor="description" className="text-2xl mr-3">Description :</label>
           </div>
           <div>
-            <textarea name="descriptor" className="w-[400px] smTablet:w-[300px] mMobile:w-[250px] mMobile:h-[130px]" placeholder="Write Here..." required value={inputDescription} onChange={(e) => setInputDescription(e.target.value)} />
+            <textarea name="descriptor" className="w-[400px] smTablet:w-[300px] mMobile:w-[250px] mMobile:h-[130px]" placeholder="Write Here..." value={inputDescription} onChange={(e) => setInputDescription(e.target.value)} />
           </div>
         </div>
 

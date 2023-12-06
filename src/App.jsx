@@ -4,9 +4,10 @@ import TodoForm from "./components/pages/TodoForm";
 import TodoList from "./components/pages/TodoList";
 import { useContext } from "react";
 import { GlobalContext } from "./components/configs/ContextProvider";
+import Popup from "./components/configs/Popup";
 
 export default function App() {
-  const { theme } = useContext(GlobalContext)
+  const { theme, popupMsg } = useContext(GlobalContext)
   return (
     <BrowserRouter>
       <section className="flex select-none">
@@ -14,7 +15,8 @@ export default function App() {
           <Aside />
         </div>
 
-        <main className={`h-screen overflow-auto p-5 pl-[210px] tablet:pl-[80px] bg-[--mainBg] text-[--white] w-full mdTablet:pl-20 lMobile:pl-16 ${theme}`}>
+        <main className={`relative h-screen overflow-auto p-5 pl-[210px] tablet:pl-[80px] bg-[--mainBg] text-[--white] w-full mdTablet:pl-20 lMobile:pl-16 ${theme}`}>
+          <Popup props={{ message: popupMsg }} />
           <Routes>
             <Route path="/" element={<TodoForm />} />
             <Route path="TodoList" element={<TodoList />} />
