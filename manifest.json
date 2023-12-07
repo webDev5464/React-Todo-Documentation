@@ -1,6 +1,8 @@
 {
   "name": "My-Todo",
   "short_name": "My-Todo",
+  "author_name": "mr.dev_dave",
+  "version":"1.0.0",
   "icons": [
     {
       "src": "/todo.png",

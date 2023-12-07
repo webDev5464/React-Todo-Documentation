@@ -5,6 +5,7 @@ import TodoList from "./components/pages/TodoList";
 import { useContext } from "react";
 import { GlobalContext } from "./components/configs/ContextProvider";
 import Popup from "./components/configs/Popup";
+import information from "../manifest.json"
 
 export default function App() {
   const { theme, popupMsg } = useContext(GlobalContext)
@@ -21,6 +22,11 @@ export default function App() {
             <Route path="/" element={<TodoForm />} />
             <Route path="TodoList" element={<TodoList />} />
           </Routes>
+
+          <div className="fixed bottom-0 right-0 text-[10px] text-[--gray] flex items-center">
+            <p className="mx-2">Developer: {information.author_name}</p>
+            <p className="mx-2">V: {information.version}</p>
+          </div>
         </main>
       </section>
     </BrowserRouter>

@@ -6,7 +6,6 @@ import { FaPencilAlt } from "react-icons/fa"
 export default function TodoList() {
   const {
     searchQuery,
-    setSearchQuery,
     todoData,
     removeTodo,
     searchData,
@@ -26,10 +25,7 @@ export default function TodoList() {
   } else if (!searchQuery == "") {
     return (
       <div>
-        <div>
-          <input type="search" placeholder="Search Your Todo..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
-        </div>
-
+        <SearchPenal />
         <div>
           {searchData.map(val => (
             <div key={val.id} className="relative border-2 border-white my-4 bg-[--aside] rounded-md mb-10">
@@ -65,9 +61,7 @@ export default function TodoList() {
   } else {
     return (
       <div className="relative">
-        <div>
-          <input type="search" placeholder="Search Your Todo..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
-        </div>
+        <SearchPenal />
         <div>
           {todoData.map(val => (
             <div key={val.id} className="relative border-2 border-white my-4 bg-[--aside] rounded-md mb-10">
@@ -99,4 +93,13 @@ export default function TodoList() {
       </div>
     )
   }
+}
+
+const SearchPenal = () => {
+  const { searchQuery, setSearchQuery } = useContext(GlobalContext)
+  return (
+    <div className="">
+      <input type="search" placeholder="Search Your Todo..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+    </div>
+  )
 }
