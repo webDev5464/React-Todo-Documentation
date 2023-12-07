@@ -40,6 +40,12 @@ export default function TodoList() {
                 <p>
                   <span className="text-[--gray]">Description :</span> <span>{val.description}</span>
                 </p>
+                <p>
+                  <span className="text-[--gray]">Time : </span><span>{val.time}</span>
+                </p>
+                <p>
+                  <span className="text-[--gray]">Date : </span><span>{val.date}</span>
+                </p>
                 <button onClick={() => {
                   removeTodo(val.id), removeSearch(val.id)
                 }} className="cursor-pointer bg-[--red] text-[--black] font-bold active:scale-95 mt-4 p-1 rounded-md border-2 border-[--white]">Remove</button>
@@ -69,6 +75,12 @@ export default function TodoList() {
               <div className="p-2">
                 <p>
                   <span className="text-[--gray]">Description :</span> <span>{val.description}</span>
+                </p>
+                <p>
+                  <span className="text-[--gray]">Time : </span><span>{val.time}</span>
+                </p>
+                <p>
+                  <span className="text-[--gray]">Date : </span><span>{val.date}</span>
                 </p>
                 <button onClick={() => removeTodo(val.id)} className="cursor-pointer bg-[--red] text-[--black] font-bold active:scale-95 mt-4 p-1 rounded-md border-2 border-[--white]">Remove</button>
               </div>

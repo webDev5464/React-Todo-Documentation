@@ -77,7 +77,7 @@ export default function ContextProvider({ children }) {
   const newTodo = {
     id: Date.now(),
     todoLength: todoData.length + 1,
-    createdTime: date.getHours() + ":" + date.getMinutes() + " " + (date < 12 ? "Pm" : "Am"),
+    createdTime: date.getHours() + ":" + date.getMinutes() + " " + (date < 12 ? "Am" : "Pm"),
     createdDate: date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
     heading: inputHeading,
     time: inputTime,
