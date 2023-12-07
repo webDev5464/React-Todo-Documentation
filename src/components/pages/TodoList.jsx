@@ -4,7 +4,14 @@ import { Link } from "react-router-dom"
 import { FaPencilAlt } from "react-icons/fa"
 
 export default function TodoList() {
-  const { searchQuery, setSearchQuery, todoData, removeTodo, searchData, removeSearch } = useContext(GlobalContext)
+  const {
+    searchQuery,
+    setSearchQuery,
+    todoData,
+    removeTodo,
+    searchData,
+    removeSearch,
+  } = useContext(GlobalContext)
 
   if (todoData.length == 0) {
     return (

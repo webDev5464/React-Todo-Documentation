@@ -74,19 +74,28 @@ export default function ContextProvider({ children }) {
   //! Add data in array
   const allData = inputHeading.concat(inputTime, inputDate, inputDescription)
   const date = new Date()
-  const addTodoBtn = () => {
-    if (allData.trim() !== "") {
-      const newTodo = {
-        id: Date.now(),
-        todoLength: todoData.length + 1,
-        createdTime: date.getHours() + ":" + date.getMinutes() + " " + (date < 12 ? "Pm" : "Am"),
-        createdDate: date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
-        heading: inputHeading,
-        time: inputTime,
-        date: inputDate,
-        description: inputDescription
-      }
+  const newTodo = {
+    id: Date.now(),
+    todoLength: todoData.length + 1,
+    createdTime: date.getHours() + ":" + date.getMinutes() + " " + (date < 12 ? "Pm" : "Am"),
+    createdDate: date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
+    heading: inputHeading,
+    time: inputTime,
+    date: inputDate,
+    description: inputDescription
+  }
 
+  //? Add todo btn
+  const addTodoBtn = () => {
+    if (inputHeading == "") {
+      setPopupMsg("Enter Heading")
+      setActiveTodo(true)
+      setTimeout(() => { setActiveTodo(false), setPopupMsg("") }, 1000)
+    } else if (inputDescription == "") {
+      setPopupMsg("Write Description")
+      setActiveTodo(true)
+      setTimeout(() => { setActiveTodo(false), setPopupMsg("") }, 1000)
+    } else if (allData.trim() !== "") {
       //? updated localStorage
       const updatedTodoData = [...todoData, newTodo]
       localStorage.setItem("storedData", JSON.stringify(updatedTodoData))
@@ -106,7 +115,7 @@ export default function ContextProvider({ children }) {
     setInputDescription("")
   }
 
-  //! remove Todo
+  //? remove Todo
   const removeTodo = (todoId) => {
     const updatedTodo = todoData.filter(todo => todo.id !== todoId)
     localStorage.setItem("storedData", JSON.stringify(updatedTodo))

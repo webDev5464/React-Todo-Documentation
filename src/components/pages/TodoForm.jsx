@@ -16,7 +16,7 @@ export default function TodoForm() {
   } = useContext(GlobalContext)
 
   return (
-    <section className="w-fit m-auto mt-10 lMobile:mt-0 border-2 bg-[--aside] rounded-lg">
+    <section className="w-fit m-auto mt-10 border-2 bg-[--aside] rounded-lg">
       <h2 className="text-center mb-4 text-2xl font-bold bg-[--white] text-[--black] py-2 rounded-tr-md rounded-tl-md">Create Todo</h2>
       <form className="lg:w-[800px] laptopSm:w-[600px] smTablet:w-[400px] lMobile:w-[350px] mMobile:w-[300px] py-1 px-4 tablet:w-fit smTablet:py-3 small:shadow-[0_2px_20px_0_var(--aside)]" onSubmit={submittedForm}>
 
