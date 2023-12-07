@@ -23,4 +23,18 @@
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
+<script>
+  const arr = ['A', 1, 4, 'C', 'D', 3, 8, 'P', 9, 'Z']
+  const newArr = []
+
+  for (let i = 0; i < arr.length; i++) {
+    typeof arr[i] === "number" ? newArr.push(arr[i]) : []
+  }
+  for (let i = 0; i < arr.length; i++) {
+    typeof arr[i] === "string" ? newArr.push(arr[i]) : []
+  }
+
+  console.log(newArr);
+</script>
+
 </html>
