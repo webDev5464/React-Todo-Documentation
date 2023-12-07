@@ -32,27 +32,29 @@ export default function TodoList() {
 
         <div>
           {searchData.map(val => (
-            <div key={val.id} className="relative border-2 border-white my-4 bg-[--aside] rounded-md">
-              <h2 className="relative text-center bg-[--white] text-[--black] py-1 font-bold">
+            <div key={val.id} className="relative border-2 border-white my-4 bg-[--aside] rounded-md mb-10">
+              <h2 className="relative text-center bg-[--white] text-[--black] py-1 font-bold text-2xl lMobile:text-xl lMobile:py-1">
                 <span>{val.heading}</span>
               </h2>
               <div className="p-2">
-                <p>
+                <p className="text-xl lMobile:text-[16px]">
                   <span className="text-[--gray]">Description :</span> <span>{val.description}</span>
                 </p>
-                <p>
+                <p className="text-xl lMobile:text-[16px]">
                   <span className="text-[--gray]">Time : </span><span>{val.time}</span>
                 </p>
-                <p>
+                <p className="text-xl lMobile:text-[16px]">
                   <span className="text-[--gray]">Date : </span><span>{val.date}</span>
                 </p>
+                <hr className="mt-3" />
                 <button onClick={() => {
                   removeTodo(val.id), removeSearch(val.id)
-                }} className="cursor-pointer bg-[--red] text-[--black] font-bold active:scale-95 mt-4 p-1 rounded-md border-2 border-[--white]">Remove</button>
+                }} className="cursor-pointer bg-[--red] text-[--black] font-bold active:scale-95 mt-4 mb-2 p-1 rounded-md border-2 border-[--white]">Remove</button>
               </div>
-              <div>
-                <p className="text-right text-[--gray] p-1 text-sm">
-                  <span className="mx-2">Date : {val.createdDate}</span> <span className="mx-2">Time : {val.createdTime}</span>
+              <div className="bg-[--white] flex justify-between items-center text-[12px] mMobile:text-[10px]">
+                <p className="text-right text-[--gray] p-1">Todo Created</p>
+                <p className="text-right text-[--gray] p-1">
+                  <span className="mx-2 mMobile:mx-0 mMobile:mr-1">Date : {val.createdDate}</span> <span className="mx-2 mMobile:mx-0">Time : {val.createdTime}</span>
                 </p>
               </div>
             </div>
@@ -68,25 +70,27 @@ export default function TodoList() {
         </div>
         <div>
           {todoData.map(val => (
-            <div key={val.id} className="relative border-2 border-white my-4 bg-[--aside] rounded-md">
-              <h2 className="relative text-center bg-[--white] text-[--black] py-1 font-bold">
+            <div key={val.id} className="relative border-2 border-white my-4 bg-[--aside] rounded-md mb-10">
+              <h2 className="relative text-center bg-[--white] text-[--black] py-2 font-bold text-2xl lMobile:text-xl lMobile:py-1">
                 <span>{val.heading}</span>
               </h2>
               <div className="p-2">
-                <p>
+                <p className="text-xl lMobile:text-[16px]">
                   <span className="text-[--gray]">Description :</span> <span>{val.description}</span>
                 </p>
-                <p>
+                <p className="text-xl lMobile:text-[16px]">
                   <span className="text-[--gray]">Time : </span><span>{val.time}</span>
                 </p>
-                <p>
+                <p className="text-xl lMobile:text-[16px]">
                   <span className="text-[--gray]">Date : </span><span>{val.date}</span>
                 </p>
-                <button onClick={() => removeTodo(val.id)} className="cursor-pointer bg-[--red] text-[--black] font-bold active:scale-95 mt-4 p-1 rounded-md border-2 border-[--white]">Remove</button>
+                <hr className="mt-3" />
+                <button onClick={() => removeTodo(val.id)} className="cursor-pointer bg-[--red] text-[--black] font-bold active:scale-95 mt-4 mb-2 p-1 rounded-md border-2 border-[--white]">Remove</button>
               </div>
-              <div>
-                <p className="text-right text-[--gray] p-1 text-sm">
-                  <span className="mx-2">Date : {val.createdDate}</span> <span className="mx-2">Time : {val.createdTime}</span>
+              <div className="bg-[--white] flex justify-between items-center text-[12px] mMobile:text-[10px]">
+                <p className="text-right text-[--gray] p-1">Todo Created</p>
+                <p className="text-right text-[--gray] p-1">
+                  <span className="mx-2 mMobile:mx-0 mMobile:mr-1">Date : {val.createdDate}</span> <span className="mx-2 mMobile:mx-0">Time : {val.createdTime}</span>
                 </p>
               </div>
             </div>

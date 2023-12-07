@@ -88,7 +88,7 @@ export default function ContextProvider({ children }) {
   //? Add todo btn
   const addTodoBtn = () => {
     if (inputHeading == "") {
-      setPopupMsg("Enter Heading")
+      setPopupMsg("Write Heading")
       setActiveTodo(true)
       setTimeout(() => { setActiveTodo(false), setPopupMsg("") }, 1000)
     } else if (inputDescription == "") {
@@ -107,12 +107,12 @@ export default function ContextProvider({ children }) {
       setPopupMsg("New todo added")
       setActiveTodo(true)
       setTimeout(() => { setActiveTodo(false), setPopupMsg("") }, 1500)
-    }
 
-    setInputHeading("")
-    setInputTime("")
-    setInputDate("")
-    setInputDescription("")
+      setInputHeading("")
+      setInputTime("")
+      setInputDate("")
+      setInputDescription("")
+    }
   }
 
   //? remove Todo
