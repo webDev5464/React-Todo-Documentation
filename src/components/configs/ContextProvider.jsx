@@ -1,19 +1,51 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react"
 
 export const GlobalContext = createContext()
 
 export default function ContextProvider({ children }) {
-  //! Aside
+  //* Aside
   const [aside, setAside] = useState(true)
+  //* toggleTheme
+  const [theme, setTheme] = useState("dark")
+  //* Todo Input Value
+  const [inputHeading, setInputHeading] = useState("")
+  const [inputTime, setInputTime] = useState("")
+  const [inputDate, setInputDate] = useState("")
+  const [inputDescription, setInputDescription] = useState("")
+  //* popup message
+  const [activeTodo, setActiveTodo] = useState(false)
+  const [popupMsg, setPopupMsg] = useState("")
+  //* all todoList data is here
+  const [todoData, setTodoData] = useState([])
+  //* search method
+  const [searchQuery, setSearchQuery] = useState("")
+  const [searchData, setSearchData] = useState([])
 
+  //! filter todo
+  const filterTodo = () => {
+    const filterResult = todoData.filter(item => item.heading.toLowerCase().includes(searchQuery.toLowerCase()))
+    setSearchData(filterResult)
+  }
+
+  useEffect(() => {
+    filterTodo()
+  }, [searchQuery])
+
+  //! remove searched todo
+  const removeSearch = (id) => {
+    let findAndRemove = todoData.filter(item => item.id !== id)
+    setSearchData(findAndRemove)
+    setSearchQuery("")
+  }
+
+  //! aside toggleActive
   const showAside = () => {
     setAside(!aside)
   }
 
-  //! toggleTheme
-  const [theme, setTheme] = useState("dark")
-
+  //! setTodo in localStorage
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark"
     setTheme(newTheme)
@@ -21,15 +53,14 @@ export default function ContextProvider({ children }) {
   }
 
   useEffect(() => {
+    //! get toggleTheme
     const storedTheme = localStorage.getItem("theme")
-
     if (storedTheme) {
       setTheme(storedTheme)
     }
 
     //! get todoData
     const storedTodoData = localStorage.getItem("storedData")
-
     if (storedTodoData) {
       setTodoData(JSON.parse(storedTodoData))
     }
@@ -40,17 +71,7 @@ export default function ContextProvider({ children }) {
     e.preventDefault()
   }
 
-  //! Todo Input Value
-  const [inputHeading, setInputHeading] = useState("")
-  const [inputTime, setInputTime] = useState("")
-  const [inputDate, setInputDate] = useState("")
-  const [inputDescription, setInputDescription] = useState("")
-  //! popup message
-  const [activeTodo, setActiveTodo] = useState(false)
-  const [popupMsg, setPopupMsg] = useState("")
-
   //! Add data in array
-  const [todoData, setTodoData] = useState([])
   const allData = inputHeading.concat(inputTime, inputDate, inputDescription)
   const date = new Date()
   const addTodoBtn = () => {
@@ -105,6 +126,7 @@ export default function ContextProvider({ children }) {
       inputDate, setInputDate,
       inputDescription, setInputDescription,
       popupMsg, setPopupMsg,
+      searchQuery, setSearchQuery,
       activeTodo,
       addTodoBtn,
       todoData,
@@ -113,6 +135,8 @@ export default function ContextProvider({ children }) {
       theme,
       toggleTheme,
       submittedForm,
+      searchData,
+      removeSearch
     }}>
       {children}
     </GlobalContext.Provider>
